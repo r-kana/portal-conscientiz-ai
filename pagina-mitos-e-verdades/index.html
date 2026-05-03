@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitos e Verdades sobre IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Mitos e Verdades sobre IA</h1>
+        
+        <div class="progress">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="info">
+            <span>Pontuação: <strong id="score">0</strong></span>
+            <span><strong id="current">1</strong> / <strong id="total">10</strong></span>
+        </div>
+
+        <div class="card" id="card">
+            <p class="question" id="question">Carregando...</p>
+            
+            <div class="buttons">
+                <button class="btn mito" onclick="answer('mito')">Mito</button>
+                <button class="btn verdade" onclick="answer('verdade')">Verdade</button>
+            </div>
+
+            <div class="result" id="result">
+                <p id="result-text"></p>
+                <button class="next" onclick="next()">Próxima →</button>
+            </div>
+        </div>
+
+        <div class="end" id="end">
+            <h2>Resultado</h2>
+            <p class="final-score"><strong id="final">0</strong> de 10</p>
+            <p id="message"></p>
+            <button class="restart" onclick="restart()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script>
+        const perguntas = [
+            { q: "O termo 'Inteligência Artificial' foi criado antes da década de 80.", a: "verdade", e: "Na verdade, o termo 'Inteligência Artificial' foi proposto em 1956 por Jhon McCarthy, um cientista da computação norte-americano. Porém, os fundamentos teóricos deste termo, já vinham sendo discutidos desde o início da década de 50, com as pesquisas do cientista da computação britânico Alan Turing." },
+
+            { q: "Os humanos serão completamente substituídos pela IA em suas profissões.", a: "mito", e: "A automação já é uma realidade, mas isso não quer dizer que a IA vai acabar com todos os empregos. O que está acontecendo é uma mudança no mercado de trabalho. As máquinas podem assumir tarefas repetitivas, mas habilidades como criatividade, inteligência emocional, pensamento estratégico e tomada de decisão continuam sendo importantes e bem humanas. Muitas profissões vão se adaptar, e novas vão surgir à medida que a IA for sendo usada em diferentes áreas." },
+
+            { q: "A IA pensa como um ser humano.", a: "mito", e: "Apesar de parecer muito inteligente, a IA não tem consciência, emoções nem intenção própria. Ela só gera respostas com base em padrões aprendidos a partir de dados. Quando um modelo de linguagem como o Gemini ou o ChatGPT responde a algo, ele não entende de verdade como um humano entenderia. Na prática, ele apenas prevê qual é a sequência de palavras mais provável para formar uma resposta que faça sentido." },
+
+            { q: "Inteligências Artificiais podem ser tendenciosas.", a: "verdade", e: "A IA aprende a partir de dados históricos, e se esses dados tiverem algum viés, ela pode repetir e até reforçar isso. Por isso, é importante ter supervisão humana e criar regras claras para evitar respostas discriminatórias.." },  
+
+            { q: "Chatbots (ChatGPT, Gemini, etc.) são a forma mais básica de IA.", a: "mito", e: "Nenhuma IA passou definitivamente no teste de Turing." },
+
+            { q: "afirmação 6", a: "verdade", e: "resumo" },
+
+            { q: "afirmação 7", a: "mito", e: "resumo" },
+
+            { q: "afirmação 8", a: "verdade", e: "resumo" },
+
+            { q: "afirmação 9", a: "mito", e: "resumo" },
+            
+            { q: "afirmação 10", a: "verdade", e: "resumo" }
+        ];
+
+        let i = 0, s = 0, done = false;
+
+        function load() {
+            document.getElementById('question').textContent = perguntas[i].q;
+            document.getElementById('current').textContent = i + 1;
+            document.getElementById('progress').style.width = (i / perguntas.length * 100) + '%';
+            document.getElementById('result').classList.remove('show', 'correct', 'wrong');
+            document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+            done = false;
+        }
+
+        function answer(choice) {
+            if (done) return;
+            done = true;
+            const correct = perguntas[i].a === choice;
+            const r = document.getElementById('result');
+            const t = document.getElementById('result-text');
+            
+            if (correct) {
+                s++;
+                document.getElementById('score').textContent = s;
+                r.classList.add('show', 'correct');
+                t.textContent = '✅ Correto! ' + perguntas[i].e;
+            } else {
+                r.classList.add('show', 'wrong');
+                t.textContent = '❌ Errado! A resposta é "' + (perguntas[i].a === 'verdade' ? 'Verdade' : 'Mito') + '". ' + perguntas[i].e;
+            }
+            document.querySelectorAll('.btn').forEach(b => b.disabled = true);
+        }
+
+        function next() {
+            i++;
+            if (i < perguntas.length) load();
+            else showEnd();
+        }
+
+        function showEnd() {
+            document.getElementById('progress').style.width = '100%';
+            document.getElementById('card').style.display = 'none';
+            document.getElementById('end').style.display = 'block';
+            document.getElementById('final').textContent = s;
+            
+            const m = document.getElementById('message');
+            if (s >= 8) m.textContent = '🎉 Parabéns! Você é expert em IA!';
+            else if (s >= 5) m.textContent = '👍 Bom trabalho! Continue aprendendo!';
+            else m.textContent = '📚 Continue estudando sobre IA!';
+        }
+
+        function restart() {
+            i = 0; s = 0; done = false;
+            document.getElementById('score').textContent = '0';
+            document.getElementById('card').style.display = 'block';
+            document.getElementById('end').style.display = 'none';
+            load();
+        }
+
+        load();
+    </script>
+</body>
+</html>
