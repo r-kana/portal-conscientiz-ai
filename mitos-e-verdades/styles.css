@@ -13,7 +13,7 @@ body {
     padding: 24px;
     background: radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 28%),
                 radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 22%),
-                linear-gradient(145deg, #1f2a45 0%, #354061 35%, #1c273f 100%);
+                linear-gradient(145deg, #3498db 0%, #2876ab 35%, #2a7ab0 100%);
     color: #1f2937;
 }
 
