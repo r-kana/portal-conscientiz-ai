@@ -13,7 +13,7 @@ body {
     padding: 24px;
     background: radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 28%),
                 radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 22%),
-                linear-gradient(145deg, #3498db 0%, #2876ab 35%, #2a7ab0 100%);
+                linear-gradient(135deg, #2a4ea3 20%, #3ab096 80%);
     color: #1f2937;
 }
 
@@ -68,7 +68,7 @@ h1 {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #3b82f6, #7c3aed);
+    background: linear-gradient(135deg, #2a4ea3 0%, #3ab096 100%);
     border-radius: inherit;
     transition: width 0.35s ease;
 }
@@ -87,7 +87,7 @@ h1 {
 }
 
 .info strong {
-    color: #4338ca;
+    color: #3ab096;
 }
 
 .card {
@@ -192,7 +192,7 @@ h1 {
 
 .next, .restart {
     padding: 14px 34px;
-    background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #2a4ea3 0%, #3ab096 100%);
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -222,7 +222,7 @@ h1 {
 
 .final-score {
     font-size: 3.2rem;
-    background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #2a4ea3 0%, #3ab096 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

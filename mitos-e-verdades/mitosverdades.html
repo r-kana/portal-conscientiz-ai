@@ -49,19 +49,19 @@
 
             { q: "A IA pensa como um ser humano.", a: "mito", e: "Apesar de parecer muito inteligente, a IA não tem consciência, emoções nem intenção própria. Ela só gera respostas com base em padrões aprendidos a partir de dados. Quando um modelo de linguagem como o Gemini ou o ChatGPT responde a algo, ele não entende de verdade como um humano entenderia. Na prática, ele apenas prevê qual é a sequência de palavras mais provável para formar uma resposta que faça sentido." },
 
-            { q: "Inteligências Artificiais podem ser tendenciosas.", a: "verdade", e: "A IA aprende a partir de dados históricos, e se esses dados tiverem algum viés, ela pode repetir e até reforçar isso. Por isso, é importante ter supervisão humana e criar regras claras para evitar respostas discriminatórias.." },  
+            { q: "Inteligências Artificiais podem ser tendenciosas.", a: "verdade", e: "A IA aprende a partir de dados históricos e padrões encontrados em textos, imagens e informações criadas por seres humanos. Se esses dados contiverem preconceitos, opiniões tendenciosas ou informações incorretas, a IA pode acabar repetindo e até reforçando esses problemas em suas respostas. Além disso, muitas IAs são projetadas para manter a conversa fluida e agradável, o que faz com que, em alguns casos, elas tendam a concordar com o usuário ou apresentem respostas com muita confiança, mesmo quando estão erradas. Por isso, a supervisão humana é essencial para verificar informações, corrigir erros e criar limites que reduzam respostas discriminatórias ou enganosas." },  
 
-            { q: "Chatbots (ChatGPT, Gemini, etc.) são a forma mais básica de IA.", a: "mito", e: "Nenhuma IA passou definitivamente no teste de Turing." },
+            { q: "A IA consegue aprender sozinha a partir de dados.", a: "verdade", e: "Sistemas de IA utilizam técnicas de aprendizado de máquina (Machine Learning) para identificar padrões em grandes volumes de dados e melhorar resultados ao longo do tempo. Porém, esse aprendizado ainda depende de dados fornecidos por humanos." },
 
-            { q: "afirmação 6", a: "verdade", e: "resumo" },
+            { q: "Aplicativos como Spotify, Netflix e TikTok usam IA.", a: "verdade", e: "Esses aplicativos utilizam Inteligência Artificial para analisar o comportamento dos usuários e personalizar a experiência de cada pessoa. A IA observa informações como músicas ou vídeos assistidos, tempo de visualização, curtidas, pesquisas e conteúdos ignorados. Com base nesses padrões, os algoritmos tentam prever o que provavelmente será mais interessante para o usuário, gerando recomendações personalizadas. É por isso que duas pessoas usando a mesma plataforma costumam receber sugestões completamente diferentes." },
 
-            { q: "afirmação 7", a: "mito", e: "resumo" },
+            { q: "Assistentes virtuais como Alexa, Siri e Google Assistente usam IA.", a: "verdade", e: "Esses assistentes utilizam IA para reconhecer voz, interpretar perguntas, responder comandos e aprender preferências do usuário ao longo do uso." },
 
-            { q: "afirmação 8", a: "verdade", e: "resumo" },
+            { q: "A Inteligência Artificial funciona apenas quando está conectada à internet.", a: "mito", e: "Muitas pessoas acreditam que toda IA depende da internet para funcionar, mas isso não é verdade. Alguns sistemas de IA podem operar diretamente em celulares, computadores, carros e outros dispositivos sem conexão online. Um exemplo são recursos de reconhecimento facial ou assistentes de câmera em smartphones. A internet normalmente é usada para acessar modelos mais avançados ou atualizar informações em tempo real." },
 
-            { q: "afirmação 9", a: "mito", e: "resumo" },
+            { q: "Estudar somente através da IA pode limitar sua capacidade de aprender.", a: "verdade", e: "A Inteligência Artificial pode facilitar muito os estudos ao resumir conteúdos, responder dúvidas e gerar explicações rápidas. Porém, depender exclusivamente dela pode prejudicar o desenvolvimento de habilidades importantes, como interpretação, pensamento crítico, pesquisa e resolução de problemas. O aprendizado mais eficiente normalmente acontece quando a IA é usada como ferramenta de apoio, junto com leitura, prática, exercícios e análise própria do estudante." },
             
-            { q: "afirmação 10", a: "verdade", e: "resumo" }
+            { q: "A Inteligência Artificial pode ser usada para combater fraudes digitais.", a: "verdade", e: "Empresas e bancos utilizam sistemas de IA para identificar comportamentos suspeitos em transações financeiras, acessos e compras online. A IA consegue analisar milhares de operações em poucos segundos e detectar padrões incomuns que podem indicar golpes ou invasões. Isso ajuda a aumentar a segurança digital e reduzir prejuízos causados por fraudes." }
         ];
 
         let i = 0, s = 0, done = false;
@@ -89,7 +89,7 @@
                 t.textContent = '✅ Correto! ' + perguntas[i].e;
             } else {
                 r.classList.add('show', 'wrong');
-                t.textContent = '❌ Errado! A resposta é "' + (perguntas[i].a === 'verdade' ? 'Verdade' : 'Mito') + '". ' + perguntas[i].e;
+                t.textContent = '❌ Errado! "' + (perguntas[i].a === 'verdade' ? 'Verdade' : 'Mito') + '". ' + perguntas[i].e;
             }
             document.querySelectorAll('.btn').forEach(b => b.disabled = true);
         }
