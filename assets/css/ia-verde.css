@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -56,7 +56,7 @@ body {
 
 .nav-link:hover {
   color: #64c0b8;
-}
+} */
 
 .hero {
   min-height: 76vh;
@@ -363,19 +363,6 @@ body {
   position: absolute;
   left: 0;
   color: #64c0b8;
-}
-
-.footer {
-  background: #2c3e50;
-  padding: 2rem;
-  text-align: center;
-  color: #ecf0f1;
-  margin-top: 4rem;
-}
-
-.footer p {
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 @media (max-width: 960px) {

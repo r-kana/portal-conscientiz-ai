@@ -1,16 +1,16 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #333;
-}
+} */
 
-.navbar {
+/* .navbar {
   background: #1d2833;
   padding: 3rem 0;
   position: sticky;
@@ -55,10 +55,10 @@ body {
 
 .nav-link:hover {
   color: #64c0b8;
-}
+} */
 
 
-.quem-somos h1 {
+/* .quem-somos h1 {
   font-size: 2.5rem;
   color: #1d2833;
   margin-bottom: 1rem;
@@ -74,7 +74,7 @@ body {
   margin: 0 auto 2rem;
   padding: 0 1rem;
   text-align: justify;
-}
+} */
 
 
 .membros {
@@ -102,20 +102,10 @@ body {
   margin-bottom: 1rem;
 }
 
-.nossa-equipe h2 {
+/* .nossa-equipe h2 {
   font-size: 2rem;
   color: #1d2833;
   margin: 3rem 0;
   text-align: center;
 
-}
-
-
-footer {
-  background: #1d2833;
-  color: #e6eef3;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-style: italic;
-}
+} */

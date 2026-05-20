@@ -1,0 +1,10 @@
+.floating-toc{
+  /* The CSS applied to our floating application */
+  position:fixed; 
+  border:1px solid grey;
+  top:100px;
+  background-color:white;
+  right:100px;
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
