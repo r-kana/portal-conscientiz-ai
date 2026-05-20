@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.navbar {
+    background: #1d2833;
+    padding: 3rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px #0000001f;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64c0b8;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.8rem;
+}
+.nav-link {
+    color: #e6eef3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+.nav-link:hover {
+    color: #64c0b8;
+}
+
+
+.quem-somos h1 {
+    font-size: 2.5rem;
+    color: #1d2833;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 8rem 0 1rem;
+}
+.quem-somos p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    max-width: 60%;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+    text-align: justify;
+}
+
+
+.membros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10rem;
+    padding: 0 1rem 2rem;
+}
+.membro {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0000001a;
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+}
+.membro img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.nossa-equipe h2 {
+    font-size: 2rem;
+    color: #1d2833;
+    margin: 3rem 0;
+    text-align: center;
+
+}
+
+
+footer {
+    background: #1d2833;
+    color: #e6eef3;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-style: italic;
+}
