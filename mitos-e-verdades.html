@@ -14,8 +14,8 @@
 </head>
 
 <body>
-  <header class="mb-5">
-    <nav class="navbar navbar-expand-lg" style="background-color: #2F93E4;">
+  <header>
+    <nav class="navbar navbar-expand-lg shadow-lg" style="background-color: #2F93E4;">
       <div class="container-fluid mx-auto" style="max-width: 1120px;">
         <a class="navbar-brand me-5" href="#">ConscientizAI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -48,38 +48,40 @@
     </nav>
   </header>
   <main class="container">
-    <div class="d-flex justify-content-center">
-      <div class="quiz-container">
-        <h1>Mitos e Verdades sobre IA</h1>
-    
-        <div class="progress">
-          <div class="progress-fill" id="progress"></div>
-        </div>
-    
-        <div class="info">
-          <span>Pontuação: <strong id="score">0</strong></span>
-          <span><strong id="current">1</strong> / <strong id="total">10</strong></span>
-        </div>
-    
-        <div class="card" id="card">
-          <p class="question" id="question">Carregando...</p>
-    
-          <div class="buttons">
-            <button class="btn mito" onclick="answer('mito')">Mito</button>
-            <button class="btn verdade" onclick="answer('verdade')">Verdade</button>
+    <div class="py-4">
+      <div class="d-flex justify-content-center">
+        <div class="quiz-container">
+          <h1>Mitos e Verdades sobre IA</h1>
+      
+          <div class="progress">
+            <div class="progress-fill" id="progress"></div>
           </div>
-    
-          <div class="result" id="result">
-            <p id="result-text"></p>
-            <button class="next" onclick="next()">Próxima →</button>
+      
+          <div class="info">
+            <span>Pontuação: <strong id="score">0</strong></span>
+            <span><strong id="current">1</strong> / <strong id="total">10</strong></span>
           </div>
-        </div>
-    
-        <div class="end" id="end">
-          <h2>Resultado</h2>
-          <p class="final-score"><strong id="final">0</strong> de 10</p>
-          <p id="message"></p>
-          <button class="restart" onclick="restart()">Jogar Novamente</button>
+      
+          <div class="card" id="card">
+            <p class="question" id="question">Carregando...</p>
+      
+            <div class="buttons">
+              <button class="btn mito" onclick="answer('mito')">Mito</button>
+              <button class="btn verdade" onclick="answer('verdade')">Verdade</button>
+            </div>
+      
+            <div class="result" id="result">
+              <p id="result-text"></p>
+              <button class="next" onclick="next()">Próxima →</button>
+            </div>
+          </div>
+      
+          <div class="end" id="end">
+            <h2>Resultado</h2>
+            <p class="final-score"><strong id="final">0</strong> de 10</p>
+            <p id="message"></p>
+            <button class="restart" onclick="restart()">Jogar Novamente</button>
+          </div>
         </div>
       </div>
     </div>
