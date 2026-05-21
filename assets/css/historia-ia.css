@@ -1,3 +1,4 @@
+/* 
 * {
   margin: 0;
   padding: 0;
@@ -54,17 +55,18 @@ body {
 
 .nav-link:hover {
   color: #3498db;
-}
+} 
+*/
 
 /* ===== HERO SECTION ===== */
 .hero {
   min-height: 80vh;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: radial-gradient(closest-side, #3498db 0%, #2470a2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 2rem;
+  text-align: center;
 }
 
 .hero-content {
