@@ -71,7 +71,7 @@ body {
 
 .hero-content {
   max-width: 800px;
-  color: white;
+  color: #FFFFFF;
 }
 
 .hero h1 {
@@ -93,6 +93,23 @@ body {
   gap: 0.5rem;
   color: white;
   margin-top: 2rem;
+}
+
+.scroll-indicator i {
+  font-size: 1rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 /* ===== TIMELINE SECTION ===== */
