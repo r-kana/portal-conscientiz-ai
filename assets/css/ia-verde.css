@@ -59,8 +59,8 @@ body {
 } */
 
 .hero {
-  min-height: 76vh;
-  background: linear-gradient(135deg, #2a70a3 0%, #3aabb0 100%);
+  min-height: 80vh;
+  background: radial-gradient(closest-side, #2a70a3 0%, #3aabb0 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,28 +70,28 @@ body {
 
 .hero-content {
   max-width: 840px;
-  color: #f6f8fb;
+  color: #FFFFFF;
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-size: 3rem;
   margin-bottom: 1rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.8rem;
-  opacity: 0.95;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .scroll-indicator {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  color: #eff5f9;
-  margin-top: 1.5rem;
+  gap: 0.5rem;
+  color: white;
+  margin-top: 2rem;
 }
 
 .scroll-indicator i {
