@@ -1,0 +1,36 @@
+.hero {
+  min-height: 80vh;
+  background: radial-gradient(closest-side, #3498db 0%, #2470a2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+#question-search {
+  background-color: #2f93e4;
+}
+
+#question-search label {
+  color: #ffffff;
+  font-weight: 400; 
+  font-size: 1.15rem;
+}

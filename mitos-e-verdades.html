@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,700' rel='stylesheet'>
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/mitos-e-verdades.css" rel="stylesheet">
+  <title>Mitos e Verdades sobre IA</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg shadow-lg" style="background-color: #2F93E4;">
+      <div class="container-fluid mx-auto" style="max-width: 1120px;">
+        <a class="navbar-brand me-5" href="./index.html">ConscientizAI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quem-somos.html">Quem Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ia-verde.html">IA Verde</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./historia-ia.html">História da IA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./mitos-e-verdades.html">Mitos & Verdades</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <div class="py-4">
+      <div class="d-flex justify-content-center">
+        <div class="quiz-container">
+          <div class="mb-4 text-center">
+            <h1>Mitos e Verdades</h1>
+          </div>
+
+          <div class="progress">
+            <div class="progress-fill" id="progress"></div>
+          </div>
+
+          <div class="info">
+            <span>Pontuação: <strong id="score">0</strong></span>
+            <span><strong id="current">1</strong> / <strong id="total">10</strong></span>
+          </div>
+
+          <div class="text-center" id="card">
+            <div class="question">
+              <p class="question-text" id="question">Carregando...</p>
+            </div>
+
+            <div class="buttons">
+              <button class="btn mito" onclick="answer('mito')">Mito</button>
+              <button class="btn verdade" onclick="answer('verdade')">Verdade</button>
+            </div>
+
+            <div class="result" id="result">
+              <p id="result-text"></p>
+              <button class="next" onclick="next()">Próxima →</button>
+            </div>
+          </div>
+
+          <div class="end" id="end">
+            <h2>Resultado</h2>
+            <p class="final-score"><strong id="final">0</strong> de 10</p>
+            <p id="message"></p>
+            <button class="restart" onclick="restart()">Jogar Novamente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+  <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"
+    integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous">
+    </script>
+  <script src="./assets/js/mitos-e-verdades.js"></script>
+</body>
+
+</html>
