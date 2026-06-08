@@ -20,12 +20,13 @@
   user-select: none;
   border: 1px solid #6c757d;
   background-color: transparent;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   -webkit-appearance: button;
   border-radius: 50rem;
   text-transform: none;
   white-space: nowrap;
 }
+
 .category-btn.active {
   color: #ffffff;
   background-color: #6c757d;
@@ -33,10 +34,10 @@
 }
 
 .blog-post-anchor {
-	text-decoration: none;
-	cursor: pointer;
-	color: unset;
-  
+  text-decoration: none;
+  cursor: pointer;
+  color: unset;
+
   img {
     max-height: 12rem;
   }
@@ -47,9 +48,7 @@
   margin-bottom: 1rem;
 }
 
-.blog-post-title {
-
-}
+.blog-post-title {}
 
 .blog-post-anchor:hover .blog-post-title {
   text-decoration: underline;
