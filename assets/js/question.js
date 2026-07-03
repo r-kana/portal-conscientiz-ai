@@ -1,6 +1,8 @@
 import { createToast } from "./toast.js"
+import { setSeachResults } from "./search-question.js"
 
 const questionForm = $("#question-form");
+const questionSearchForm = $("#question-search-form")
 
 $(function() {
 
@@ -21,6 +23,27 @@ $(function() {
     .done((data, textStatus, jqXHR) => {
       questionForm[0].reset();
       createToast("Pergunta publicada!");  
+    })
+    .fail(( jqXHR, textStatus, errorThrown) => {
+      console.log(textStatus)
+    })
+  })
+
+  questionSearchForm.on("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(questionSearchForm[0]);
+    const params = { search: formData.get("search") };
+    const queryString = new URLSearchParams(params).toString();
+
+    $.ajax({
+      type: "GET",
+      url: `http://localhost:3000/questions/search?${queryString}`,
+      headers: {"Accept": "application/json"},
+      contentType: 'application/json',
+    })
+    .done((data, textStatus, jqXHR) => {
+      questionSearchForm[0].reset();
+      setSeachResults(data);
     })
     .fail(( jqXHR, textStatus, errorThrown) => {
       console.log(textStatus)

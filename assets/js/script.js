@@ -1,3 +1,5 @@
+import { setSeachResults } from "./search-question.js"
+
 const questionSearchForm = $("#question-search-form")
 
 $(async function() {
@@ -131,19 +133,3 @@ function setPosts(posts)
   }
 }
 
-function setSeachResults(questions)
-{ 
-  $("#search-result").html(`
-    <ul class="list-group list-group-flush">
-      ${questions.map(question => {
-        return `
-          <li class="list-group-item question-item">
-            <div class="py-2">
-              <p class="m-0">${question.content}</p>
-            </div>
-          </li>
-        `;
-      }).join("\n")}
-    </ul>
-  `);
-}
