@@ -83,3 +83,25 @@ footer {
   margin-top: 1rem;
   font-style: italic;
 }
+
+a:hover .card-title {
+  text-decoration: underline;
+}
+
+.question-item {
+  transition: background-color 0.3s ease;
+}
+
+.question-item:hover {
+  background-color: #e9ecef;
+}
+
+.sugested-question {
+  background-color: #C5DCEF;
+  transition: background-color 0.3s ease;
+}
+
+.sugested-question:hover {  
+  background-color: #2070B2; 
+  color: #FFFFFF;
+}
