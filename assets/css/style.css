@@ -9,6 +9,15 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif !important;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 #navbarSupportedContent .nav-item:hover {
   border-radius: 0.5rem;
   background-color: #2070B2;
@@ -26,7 +35,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 #link-last-blog:hover {
-  text-decoration: underline;
+  color: #2070B2;
 }
 
 #carousel-inner {
