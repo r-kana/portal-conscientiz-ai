@@ -82,19 +82,17 @@
         <h4 class='mb-3 fw-normal'>Pesquise por dúvidas já respondidas</h4>
         <div class="px-3">
 
-          <div class="rounded p-3 mb-4" id="question-search">
-            <form class="m-0">
+          <<div class="rounded p-3 mb-4" id="question-search">
+            <form class="m-0" id="question-search-form">
+              <label for="searchQuestion" class="form-label">Pesquise dúvidas já respondidas:</label>
               <div class="d-flex align-items-center">
-                <input type="text" id="searchQuestion" class="form-control me-3" aria-describedby="searchQuestion">
+                <input type="text" id="searchQuestion" name="search" class="form-control me-3" aria-describedby="searchQuestion">
                 <button class="btn btn-outline-light btn-lg border border-2"><i class="bi bi-search"></i></button>
               </div>
             </form>
           </div>
 
-          <div id='search-result'>
-            <div class="border rounded mb-5" style="height: 200px;">
-            </div>
-          </div>
+          <div class="border rounded mb-5 overflow-auto" style="max-height: 300px;" id='search-result'></div>
         </div>
       </div>
     </div>
