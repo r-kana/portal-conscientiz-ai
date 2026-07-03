@@ -51,8 +51,7 @@
 .blog-post-title {}
 
 .blog-post-anchor:hover .blog-post-title {
-  text-decoration: underline;
-  text-underline-offset: 0.25rem
+  color: #2070B2;
 }
 
 .post-tags-container {
