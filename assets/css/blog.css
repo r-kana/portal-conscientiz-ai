@@ -44,11 +44,9 @@
 }
 
 .blog-post {
-  width: 22rem;
-  margin-bottom: 1rem;
+  width: 24rem;
+  min-height: 400px;
 }
-
-.blog-post-title {}
 
 .blog-post-anchor:hover .blog-post-title {
   color: #2070B2;
@@ -58,7 +56,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 .blog-post-tag {
