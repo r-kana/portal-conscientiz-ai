@@ -1,4 +1,5 @@
 import { createToast } from "./toast.js"
+import { appConfig } from "./app.js";
 
 const starRating = $('.star-rating');
 const ratingValue = $('#rating-value');
@@ -74,7 +75,11 @@ function setPostContent(post)
   $("#post-title").html(post.title);
   $("#post-subtitle").html(post.subtitle) ;
   $("#post-time-stamp").html(`Publicado em ${new Date(post.updatedAt).toLocaleDateString()}`);
-  $("#post-main").html(post.content);
+  $("#post-main").html(`
+    ${post.imgSrc && `<img src="${appConfig.PUBLIC_URL + post.imgSrc}" class="post-image"></img>`}
+    ${post.content}
+  `);
+  
   $("#post-tags").html(`
     <p>
       Tags: 
