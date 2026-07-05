@@ -19,7 +19,7 @@ $(async function() {
       contentType: 'application/json',
     })
     .done((data, textStatus, jqXHR) => {
-      questionSearchForm[0].reset();
+      // questionSearchForm[0].reset();
       setSeachResults(data);
     })
     .fail(( jqXHR, textStatus, errorThrown) => {
@@ -75,20 +75,28 @@ function setSugestedQuestions(questions)
   if(indexes.length === 4) {
     $("#sugested-questions").html(`
       <div class="col">
-        <div class="px-3 py-2 rounded mb-2 sugested-question">
-          <p class="m-0">${questions[0].content}</p>
-        </div>
-        <div class="px-3 py-2 rounded mb-2 sugested-question">
-          <p class="m-0">${questions[1].content}</p>
-        </div>
+        <a href="./faca-uma-pergunta.html?q_id=${questions[0].id}">
+          <div class='px-3 py-3 rounded mb-2 sugested-question'>
+            <p class='m-0'>${questions[0].content}</p>
+          </div>
+        </a>
+        <a href="./faca-uma-pergunta.html?q_id=${questions[1].id}">
+          <div class='px-3 py-3 rounded mb-2 sugested-question'>
+            <p class='m-0'>${questions[1].content}</p>
+          </div>
+        </a>
       </div>
       <div class="col">
-        <div class="px-3 py-2 rounded mb-2 sugested-question">
-          <p class="m-0">${questions[2].content}</p>
-        </div>
-        <div class="px-3 py-2 rounded mb-2 sugested-question">
-          <p class="m-0">${questions[3].content}</p>
-        </div>
+        <a href="./faca-uma-pergunta.html?q_id=${questions[2].id}">
+          <div class='px-3 py-3 rounded mb-2 sugested-question'>
+            <p class='m-0'>${questions[2].content}</p>
+          </div>
+        </a>
+        <a href="./faca-uma-pergunta.html?q_id=${questions[3].id}">
+          <div class='px-3 py-3 rounded mb-2 sugested-question'>
+            <p class='m-0'>${questions[3].content}</p>
+          </div>
+        </a>
       </div>
     `);
   }

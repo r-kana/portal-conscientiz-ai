@@ -106,11 +106,18 @@ a:hover .card-title {
 }
 
 .sugested-question {
-  background-color: #C5DCEF;
+  background-color: #E0F1FF;
   transition: background-color 0.3s ease;
 }
 
 .sugested-question:hover {  
   background-color: #2070B2; 
   color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.question-item:hover .question-result-icon {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }

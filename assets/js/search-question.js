@@ -8,9 +8,17 @@ function setSeachResults(questions)
         const question = questions[index];
         return `
           <li class="list-group-item question-item">
-            <div class="py-2">
-              <p class="m-0">${question.content}</p>
-            </div>
+            <a class="py-2" href="./faca-uma-pergunta.html?q_id=${question.id}">
+              <div class="d-flex justify-content-between">
+                <p class="m-0">${question.content}</p>
+                <div class='question-result-icon'>
+                  <span class='me-1'>
+                    Ver resposta
+                  </span>
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+              </div>
+            </a>
           </li>
         `;
       }).join("\n")}

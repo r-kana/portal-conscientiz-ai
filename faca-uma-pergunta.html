@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,7 +18,7 @@
   <header>
     <nav class="navbar navbar-expand-lg" style="background-color: #2F93E4;">
       <div class="container-fluid mx-auto" style="max-width: 1120px;">
-        <a class="navbar-brand me-5" href="#">ConscientizAI</a>
+        <a class="navbar-brand me-5" href="./index.html">ConscientizAI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,9 +50,25 @@
   </header>
   <main>
     <div class="container">
+
+      <div class="my-4 p-5 bg-body rounded">
+        <h4 class='mb-3 fw-normal' id="question-search-section">Pesquise por dúvidas já respondidas</h4>
+        <div class="px-3">
+          <div class="rounded p-3 mb-4" id="question-search">
+            <form class="m-0" id="question-search-form">
+              <div class="d-flex align-items-center">
+                <input type="text" id="searchQuestion" name="search" class="form-control me-3" aria-describedby="searchQuestion">
+                <button class="btn btn-outline-light btn-lg border border-2"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+          </div>
+          <div class="border rounded mb-5 overflow-auto" style="max-height: 300px;" id='search-result'></div>
+        </div>
+      </div>
+
       <div class="my-4 p-5 bg-body rounded">
         <div class="mb-4">
-          <h4 class='mb-3 fw-normal'>Publique sua dúvida</h4>
+          <h4 class='mb-3 fw-normal' id="publish-question-section">Publique sua dúvida</h4>
           <p class="">Dúvidas publicadas serão respondidas pela equipe do projeto e suas respostas ficam disponíveis para consulta</p>
         </div>
         <div class="rounded p-3 mb-4 border border-primary-subtle border-2">
@@ -75,24 +92,6 @@
               <input type="submit" class="btn btn-primary px-4" style="letter-spacing: 2px;" value="PUBLICAR">
             </div>
           </form>
-        </div>
-      </div>
-
-      <div class="my-4 p-5 bg-body rounded">
-        <h4 class='mb-3 fw-normal'>Pesquise por dúvidas já respondidas</h4>
-        <div class="px-3">
-
-          <<div class="rounded p-3 mb-4" id="question-search">
-            <form class="m-0" id="question-search-form">
-              <label for="searchQuestion" class="form-label">Pesquise dúvidas já respondidas:</label>
-              <div class="d-flex align-items-center">
-                <input type="text" id="searchQuestion" name="search" class="form-control me-3" aria-describedby="searchQuestion">
-                <button class="btn btn-outline-light btn-lg border border-2"><i class="bi bi-search"></i></button>
-              </div>
-            </form>
-          </div>
-
-          <div class="border rounded mb-5 overflow-auto" style="max-height: 300px;" id='search-result'></div>
         </div>
       </div>
     </div>

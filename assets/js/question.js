@@ -3,8 +3,22 @@ import { setSeachResults } from "./search-question.js"
 
 const questionForm = $("#question-form");
 const questionSearchForm = $("#question-search-form")
+const questionId = parseInt(new URLSearchParams(window.location.search).get('q_id'));
 
-$(function() {
+$(async function() {
+  if(questionId) {
+    await loadQuestion();
+  }
+
+  const hash = window.location.hash;
+  if(hash === "#publish-question-section") {
+    $('#question').trigger('focus');
+  }
+  else if (hash === "#question-search-section") {
+    $("#searchQuestion").trigger('focus') 
+  }
+
+  
 
   questionForm.on('submit', async (e) => {
     e.preventDefault()
@@ -50,3 +64,38 @@ $(function() {
     })
   })
 })
+
+async function loadQuestion()
+{
+  $.ajax({
+    type: "GET",
+    url: `http://localhost:3000/questions/${questionId}`,
+    headers: {"Accept": "application/json"},
+    contentType: 'application/json',
+  })
+  .done((data, textStatus, jqXHR) => {
+    setQuestionResponse(data.question);
+  })
+  .fail(( jqXHR, textStatus, errorThrown) => {
+    console.log(textStatus)
+  })
+}
+
+function setQuestionResponse(question)
+{
+  $("#search-result").html(`
+    <div class='d-flex flex-column p-3'>
+      <p>Pergunta:</p>
+      <div>
+        <h5  class='fw-semibold'>${question.content}</h5>
+        <p class='m-0' style='font-size: 12px;'>Perguntada feita em: ${new Date(question.createdAt).toLocaleDateString()}</p>
+      </div>
+      <hr>
+      <p>Resposta:</p>
+      <div>
+        <h5>${question.answer.content}</h5>
+        <p class='m-0' style='font-size: 12px;'>Respondido em: ${new Date(question.answer.updatedAt).toLocaleDateString()}</p>
+      </div>
+    </div>
+  `);
+}
