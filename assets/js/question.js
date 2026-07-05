@@ -86,14 +86,14 @@ function setQuestionResponse(question)
   $("#search-result").html(`
     <div class='d-flex flex-column p-3'>
       <p>Pergunta:</p>
-      <div>
+      <div class='px-2'>
         <h5  class='fw-semibold'>${question.content}</h5>
         <p class='m-0' style='font-size: 12px;'>Perguntada feita em: ${new Date(question.createdAt).toLocaleDateString()}</p>
       </div>
       <hr>
       <p>Resposta:</p>
-      <div>
-        <h5>${question.answer.content}</h5>
+      <div class='px-2'>
+        <h5 style="text-align: justify;">${question.answer.content}</h5>
         <p class='m-0' style='font-size: 12px;'>Respondido em: ${new Date(question.answer.updatedAt).toLocaleDateString()}</p>
       </div>
     </div>
