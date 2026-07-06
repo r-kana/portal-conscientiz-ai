@@ -5,28 +5,28 @@ const questionForm = $("#question-form");
 const questionSearchForm = $("#question-search-form")
 const questionId = parseInt(new URLSearchParams(window.location.search).get('q_id'));
 
-$(async function() {
-  if(questionId) {
+$(async function () {
+  if (questionId) {
     await loadQuestion();
   }
 
   const hash = window.location.hash;
-  if(hash === "#publish-question-section") {
+  if (hash === "#publish-question-section") {
     $('#question').trigger('focus');
   }
   else if (hash === "#question-search-section") {
-    $("#searchQuestion").trigger('focus') 
+    $("#searchQuestion").trigger('focus')
   }
 
-  
+
 
   questionForm.on('submit', async (e) => {
     e.preventDefault()
     const formData = new FormData(questionForm[0]);
     await $.ajax({
       type: "POST",
-      url: `http://localhost:3000/questions`,
-      headers: {"Accept": "application/json"},
+      url: `https://conscientiz-ai-server.onrender.com/questions`,
+      headers: { "Accept": "application/json" },
       contentType: 'application/json',
       data: JSON.stringify({
         name: formData.get("name"),
@@ -34,13 +34,13 @@ $(async function() {
         content: formData.get("content")
       })
     })
-    .done((data, textStatus, jqXHR) => {
-      questionForm[0].reset();
-      createToast("Pergunta publicada!");  
-    })
-    .fail(( jqXHR, textStatus, errorThrown) => {
-      console.log(textStatus)
-    })
+      .done((data, textStatus, jqXHR) => {
+        questionForm[0].reset();
+        createToast("Pergunta publicada!");
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        console.log(textStatus)
+      })
   })
 
   questionSearchForm.on("submit", (e) => {
@@ -51,38 +51,36 @@ $(async function() {
 
     $.ajax({
       type: "GET",
-      url: `http://localhost:3000/questions/search?${queryString}`,
-      headers: {"Accept": "application/json"},
+      url: `https://conscientiz-ai-server.onrender.com/questions/search?${queryString}`,
+      headers: { "Accept": "application/json" },
       contentType: 'application/json',
     })
-    .done((data, textStatus, jqXHR) => {
-      questionSearchForm[0].reset();
-      setSeachResults(data);
-    })
-    .fail(( jqXHR, textStatus, errorThrown) => {
-      console.log(textStatus)
-    })
+      .done((data, textStatus, jqXHR) => {
+        questionSearchForm[0].reset();
+        setSeachResults(data);
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        console.log(textStatus)
+      })
   })
 })
 
-async function loadQuestion()
-{
+async function loadQuestion() {
   $.ajax({
     type: "GET",
-    url: `http://localhost:3000/questions/${questionId}`,
-    headers: {"Accept": "application/json"},
+    url: `https://conscientiz-ai-server.onrender.com/questions/${questionId}`,
+    headers: { "Accept": "application/json" },
     contentType: 'application/json',
   })
-  .done((data, textStatus, jqXHR) => {
-    setQuestionResponse(data.question);
-  })
-  .fail(( jqXHR, textStatus, errorThrown) => {
-    console.log(textStatus)
-  })
+    .done((data, textStatus, jqXHR) => {
+      setQuestionResponse(data.question);
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log(textStatus)
+    })
 }
 
-function setQuestionResponse(question)
-{
+function setQuestionResponse(question) {
   $("#search-result").html(`
     <div class='d-flex flex-column p-3'>
       <p>Pergunta:</p>

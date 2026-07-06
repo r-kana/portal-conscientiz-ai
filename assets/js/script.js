@@ -2,7 +2,7 @@ import { setSeachResults } from "./search-question.js"
 
 const questionSearchForm = $("#question-search-form")
 
-$(async function() {
+$(async function () {
   await loadQuestions();
   await loadPosts();
 
@@ -14,17 +14,17 @@ $(async function() {
 
     $.ajax({
       type: "GET",
-      url: `http://localhost:3000/questions/search?${queryString}`,
-      headers: {"Accept": "application/json"},
+      url: `https://conscientiz-ai-server.onrender.com/questions/search?${queryString}`,
+      headers: { "Accept": "application/json" },
       contentType: 'application/json',
     })
-    .done((data, textStatus, jqXHR) => {
-      // questionSearchForm[0].reset();
-      setSeachResults(data);
-    })
-    .fail(( jqXHR, textStatus, errorThrown) => {
-      console.log(textStatus)
-    })
+      .done((data, textStatus, jqXHR) => {
+        // questionSearchForm[0].reset();
+        setSeachResults(data);
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        console.log(textStatus)
+      })
   })
 
   // carouselInit()
@@ -39,8 +39,8 @@ function carouselInit() {
   let itemWidth = $('#carousel-inner').children()[0].offsetWidth;
   let carouselWidth = $('#carousel-inner').prop("scrollWidth");
   let windowWidth = $('#carousel-inner').prop("offsetWidth");
-  let gapWidth = (carouselWidth - (itemWidth * carouselItemLength)) / (carouselItemLength-1);
-  let itemsOnWindow = Math.floor(windowWidth/(itemWidth + gapWidth));
+  let gapWidth = (carouselWidth - (itemWidth * carouselItemLength)) / (carouselItemLength - 1);
+  let itemsOnWindow = Math.floor(windowWidth / (itemWidth + gapWidth));
 
   windowItemsOffset = (itemWidth + gapWidth) * itemsOnWindow;
 }
@@ -54,25 +54,23 @@ function slideRight() {
 function slideLeft() {
   $('#carousel-inner')[0].scrollLeft -= (windowItemsOffset);
 }
-async function loadQuestions()
-{
+async function loadQuestions() {
   await $.ajax({
     type: "GET",
-    url: "http://localhost:3000/questions?limit=4",
-    headers: {"Accept": "application/json"},
+    url: "https://conscientiz-ai-server.onrender.com/questions?limit=4",
+    headers: { "Accept": "application/json" },
   })
-  .done((data, textStatus, jqXHR) => {
-    setSugestedQuestions(data)
-  })
-  .fail(( jqXHR, textStatus, errorThrown) => {
-    console.log(textStatus)
-  })
+    .done((data, textStatus, jqXHR) => {
+      setSugestedQuestions(data)
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log(textStatus)
+    })
 }
 
-function setSugestedQuestions(questions)
-{
+function setSugestedQuestions(questions) {
   const indexes = Object.keys(questions);
-  if(indexes.length === 4) {
+  if (indexes.length === 4) {
     $("#sugested-questions").html(`
       <div class="col">
         <a href="./faca-uma-pergunta.html?q_id=${questions[0].id}">
@@ -102,28 +100,25 @@ function setSugestedQuestions(questions)
   }
 }
 
-async function loadPosts()
-{
+async function loadPosts() {
   await $.ajax({
     type: "GET",
-    url: "http://localhost:3000/posts?limit=4",
-    headers: {"Accept": "application/json"},
+    url: "https://conscientiz-ai-server.onrender.com/posts?limit=4",
+    headers: { "Accept": "application/json" },
   })
-  .done((data, textStatus, jqXHR) => {
-    setPosts(data)
-  })
-  .fail(( jqXHR, textStatus, errorThrown) => {
-    console.log(textStatus)
-  })
+    .done((data, textStatus, jqXHR) => {
+      setPosts(data)
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log(textStatus)
+    })
 }
 
-function setPosts(posts)
-{
+function setPosts(posts) {
   const indexes = Object.keys(posts)
-  if(!indexes.length) return;
+  if (!indexes.length) return;
   const postList = $("#post-list");
-  for(const index of indexes)
-  {
+  for (const index of indexes) {
     const post = posts[index];
     const html = `
       <a href="/post.html?id=${post.id}" class="text-decoration-none">
@@ -136,7 +131,7 @@ function setPosts(posts)
         </div>
       </a>
       `;
-    
+
     postList.append(html)
   }
 }

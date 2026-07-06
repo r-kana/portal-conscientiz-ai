@@ -1,3 +1,4 @@
 export const appConfig = {
-  PUBLIC_URL: "http://localhost:3000/public/img/"
+  PUBLIC_URL: "https://conscientiz-ai-server.onrender.com/public/img/",
+  SERVER_URL: "https://conscientiz-ai-server.onrender.com"
 }

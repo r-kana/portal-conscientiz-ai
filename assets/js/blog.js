@@ -1,32 +1,30 @@
 import { appConfig } from "./app.js";
 
-$(async function() {
+$(async function () {
   await loadPosts();
 })
 
-async function loadPosts()
-{
+async function loadPosts() {
   await $.ajax({
     type: "GET",
-    url: `http://localhost:3000/posts`,
-    headers: {"Accept": "application/json"},
+    url: `https://conscientiz-ai-server.onrender.com/posts`,
+    headers: { "Accept": "application/json" },
   })
-  .done((data, textStatus, jqXHR) => {
-    setPosts(data)
-  })
-  .fail(( jqXHR, textStatus, errorThrown) => {
-    console.log(textStatus)
-  })
+    .done((data, textStatus, jqXHR) => {
+      setPosts(data)
+    })
+    .fail((jqXHR, textStatus, errorThrown) => {
+      console.log(textStatus)
+    })
 }
 
-function setPosts(posts)
-{
+function setPosts(posts) {
   const indexes = Object.keys(posts);
   $("#posts-list").html(`
     ${indexes.map(index => {
-      const post = posts[index];
+    const post = posts[index];
 
-      return `
+    return `
         <a href="./post.html?id=${post.id}" class="blog-post-anchor">
           <div class="card blog-post">
             ${post.imgSrc && `<img src="${appConfig.PUBLIC_URL + post.imgSrc}" class="card-img-top">`}
@@ -37,13 +35,13 @@ function setPosts(posts)
               </div>
               <div class="post-tags-container">
                 ${post.tags.map(tag => {
-                  return `<span class="blog-post-tag">${tag.name}</span>`
-                }).join("")}
+      return `<span class="blog-post-tag">${tag.name}</span>`
+    }).join("")}
               </div>
             </div>
           </div>
         </a>
       `;
-    }).join("")}
+  }).join("")}
   `);
 }
